@@ -3,7 +3,7 @@ import HeroSection  from "@/components/HeroSection";
 import HeroText from "@/components/HeroText"; 
 
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function Home() {
   return (
     <html lang="en">
       <body>
@@ -13,7 +13,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
        
   
-        {children}
       </body>
     </html>
   );
