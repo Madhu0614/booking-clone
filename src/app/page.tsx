@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import HeroSection  from "@/components/HeroSection";
 import HeroText from "@/components/HeroText"; 
+import Carousel from "@/components/carousel";
+import Destinations from "@/components/destinations";
 
 
 export default function Home() {
@@ -10,6 +12,8 @@ export default function Home() {
         <Header />
         <HeroSection />
         <HeroText />
+        <Destinations />
+        <Carousel />
 
        
   
