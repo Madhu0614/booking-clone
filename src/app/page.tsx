@@ -4,6 +4,8 @@ import HeroText from "@/components/HeroText";
 import Carousel from "@/components/carousel";
 import Destinations from "@/components/destinations";
 import Explore from "@/components/Explore";
+import Deals from "@/components/Deals";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -17,7 +19,8 @@ export default function Home() {
         
         <Explore />
         <Carousel />
-
+        <Deals />
+        <Footer/>
        
   
       </body>
