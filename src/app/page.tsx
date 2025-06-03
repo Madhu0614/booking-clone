@@ -7,6 +7,8 @@ import Explore from "@/components/Explore";
 import Deals from "@/components/Deals";
 import Footer from "@/components/Footer";
 import Planner from "@/components/Planner";
+import Footer1 from "@/components/Footer1";
+import Travelers from "@/components/Travelers";
 
 
 export default function Home() {
@@ -23,8 +25,10 @@ export default function Home() {
         <Planner />
         <Deals />
         <Footer />
+        <Travelers />
+        <Footer1 />
 
       </body>
-    </html>
+    </html> 
   );
 }
