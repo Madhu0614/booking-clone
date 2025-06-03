@@ -6,6 +6,7 @@ import Destinations from "@/components/destinations";
 import Explore from "@/components/Explore";
 import Deals from "@/components/Deals";
 import Footer from "@/components/Footer";
+import Planner from "@/components/Planner";
 
 
 export default function Home() {
@@ -19,10 +20,10 @@ export default function Home() {
         
         <Explore />
         <Carousel />
+        <Planner />
         <Deals />
-        <Footer/>
-       
-  
+        <Footer />
+
       </body>
     </html>
   );
