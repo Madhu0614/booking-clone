@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 
 import {
@@ -91,7 +92,7 @@ export default function CarouselComponent() {
               className="basis-[75%] px-2 flex flex-col"
             >
               <div className="w-full h-[380px] border rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
-                <img
+                <Image
                   src={item.src}
                   alt={item.name}
                   className="w-full h-[180px] object-cover"

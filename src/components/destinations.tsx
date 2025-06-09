@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 
 const destinations = [
     { src: "flag.png", name: "India" },
@@ -22,7 +23,7 @@ export default function TrendingDestinations() {
             className="relative h-[240px] rounded-xl overflow-hidden shadow-md"
           >
             <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-black to-transparent z-10" />
-            <img
+            <Image
               src={dest.src}
               alt={dest.name}
               className="object-cover w-full h-full"
@@ -42,7 +43,7 @@ export default function TrendingDestinations() {
             className="relative h-[240px] rounded-xl overflow-hidden shadow-md"
           >
             <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-black to-transparent z-10" />
-            <img
+            <Image
               src={dest.src}
               alt={dest.name}
               className="object-cover w-full h-full"

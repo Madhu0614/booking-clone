@@ -5,11 +5,11 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
 import Image from "next/image";
 import NavButton from "@/components/NavButton";
+
 import Hero from "./HeroText";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,

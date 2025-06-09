@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from 'next/image';
 
 interface Destination {
   src: string;
@@ -108,7 +109,7 @@ export default function CarouselComponent({ category }: Props) {
               className="basis-[45%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/6 px-2 flex flex-col"
             >
               <div className="w-full bg-white overflow-hidden transition duration-300 hover:scale-[1.02] hover:shadow-lg rounded-lg">
-                <img
+                <Image
                   src={item.src}
                   alt={item.name}
                   className="w-full h-[140px] sm:h-[150px] object-cover rounded-t-lg"
