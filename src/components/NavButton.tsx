@@ -85,31 +85,29 @@ const navItems = [
 ];
 export default function NavButtons() {
   return (
-    <>
-     
-
-    <section>
-    <div className=" backdrop:flex space-x-2  pt-[0] ml-[12rem] px-6 py-3">
-            <nav className="max-w-7xl ml-auto mx-10  ">
-        <ul className="flex space-x-0.8 py-3 ml-auto">
-          {navItems.map((item, idx) => (
-            <li
-              key={idx}
-              className={`flex items-center gap-2 text-sm cursor-pointer px-3 py-2 rounded-full  pt-3 pb-3 ${
-                idx === 0 ? 'bg-blue1 text-white font-sans-serif border-[1.5px] border-white ' : 'hover:bg-blue-800'
-              }`}
-            >
-              <Link href={item.href} className="flex items-center gap-2"></Link>
-                {item.icon}
-              <span>{item.label}</span>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+    <section className="w-full px-0 sm:px-8 py-2">
+      <div className="max-w-7xl mx-auto overflow-x-auto">
+        <nav>
+          <ul className="inline-flex gap-2 px-4 sm:px-0 whitespace-nowrap">
+            {navItems.map((item, idx) => (
+              <li
+                key={idx}
+                className={`flex items-center gap-2 text-sm cursor-pointer px-4 py-2 rounded-full shrink-0
+                  ${
+                    idx === 0
+                      ? 'bg-blue-900 text-white border border-white'
+                      : 'hover:bg-blue-900'
+                  }`}
+              >
+                <Link href={item.href} className="flex items-center gap-2">
+                  <span>{item.icon}</span>
+                  <span>{item.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </section>
-    
-    </>
-    );
-
+  );
 }

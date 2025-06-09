@@ -41,18 +41,19 @@ export default function Planner() {
   const [selected, setSelected] = useState('city');
 
   return (
-    <Tabs value={selected} onValueChange={setSelected} className=" ">
-      <TabsList className="flex flex-wrap gap-2 mb-4  bg-white max-w-[1010px] ml-[2px]">
+    <Tabs value={selected} onValueChange={setSelected} className="w-full px-2 md:px-6">
+      {/* Scrollable Tab List on Mobile */}
+      <TabsList className="flex overflow-x-auto md:flex-wrap gap-2 mb-4 bg-white rounded-md scrollbar-hide">
         {categories.map(({ key, label, icon }) => (
           <TabsTrigger
             key={key}
             value={key}
-            className="text-gray-950 ml-[2px] flex items-center gap-2 px-4 py-2 capitalize transition-colors
-                      data-[state=active]:border-blue-400 rounded-[10px]
-                      data-[state=active]:border-[1.5px]
+            className="flex-shrink-0 text-gray-950 whitespace-nowrap flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base
+                      capitalize transition-colors
+                      data-[state=active]:border-blue-500 
                       data-[state=active]:text-blue-600 
-                      hover:bg-gray-300 
-                      "
+                      data-[state=active]:border 
+                      rounded-lg hover:bg-gray-100"
           >
             {icon}
             {label}

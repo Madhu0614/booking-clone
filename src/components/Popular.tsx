@@ -37,19 +37,19 @@ export default function CarouselComponent({ category }: { category: string }) {
   let items: string[] = [];
 
   switch (category) {
-    case 'Domestic cities':
+    case "Domestic cities":
       items = domesticCities;
       break;
-    case 'International cities':
+    case "International cities":
       items = internationalCities;
       break;
-    case 'Regions':
+    case "Regions":
       items = regions;
       break;
-    case 'Countries':
+    case "Countries":
       items = countries;
       break;
-    case 'Places To Stay':
+    case "Places To Stay":
       items = placesToStay;
       break;
     default:
@@ -59,16 +59,21 @@ export default function CarouselComponent({ category }: { category: string }) {
   const visibleItems = showMore ? items : items.slice(0, MAX_VISIBLE);
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-2 text-sm text-gray-800 px-2">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-3 gap-x-4 text-sm text-gray-800 px-4 sm:px-6 md:px-8">
       {visibleItems.map((item) => (
-        <a key={item} href="#" className="hover:underline">
+        <a
+          key={item}
+          href="#"
+          className="hover:underline truncate block"
+        >
           {item}
         </a>
       ))}
+
       {!showMore && items.length > MAX_VISIBLE && (
         <button
           onClick={() => setShowMore(true)}
-          className="text-blue-600 hover:underline font-medium col-span-full text-left"
+          className="text-blue-600 hover:underline font-medium col-span-full text-left mt-2"
         >
           + Show more
         </button>

@@ -88,7 +88,7 @@ export default function CarouselComponent() {
           {carouselItems.map((item, index) => (
             <CarouselItem
               key={index}
-              className="basis-1/4 px-2 flex flex-col"
+              className="basis-[75%] px-2 flex flex-col"
             >
               <div className="w-full h-[380px] border rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
                 <img
@@ -97,10 +97,10 @@ export default function CarouselComponent() {
                   className="w-full h-[180px] object-cover"
                 />
                 <div className="p-4">
-                  <h2 className="text-lg font-semibold truncate  mb-1">
+                  <h2 className="text-lg font-semibold truncate mb-1">
                     {item.name}
                   </h2>
-                  <p className="text-sm text-gray-600 truncate  mb-1">
+                  <p className="text-sm text-gray-600 truncate mb-1">
                     {item.location}
                   </p>
                   <div className="flex items-center gap-2 text-sm mb-1 pt-8">

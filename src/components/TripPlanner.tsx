@@ -92,27 +92,29 @@ export default function CarouselComponent({ category }: Props) {
   const data = CATEGORY_MAP[category.toLowerCase()] || [];
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 py-6">
-      <h1 className="text-3xl font-bold mb-4">Quick and easy trip planner</h1>
-      <p className="text-gray-600 mb-4">
+    <div className="max-w-[1200px] mx-auto px-2 sm:px-4 py-6">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-4">
+        Quick and easy trip planner
+      </h1>
+      <p className="text-sm sm:text-base text-gray-600 mb-4">
         Pick a vibe and explore the top destinations in India
       </p>
 
-      <Carousel className="w-full h-full" orientation="horizontal">
+      <Carousel className="w-full" orientation="horizontal">
         <CarouselContent>
           {data.map((item, index) => (
             <CarouselItem
               key={index}
-              className="basis-1/6 px-2 flex flex-col"
+              className="basis-[45%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/6 px-2 flex flex-col"
             >
-              <div className="w-full bg-white  overflow-hidden transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+              <div className="w-full bg-white overflow-hidden transition duration-300 hover:scale-[1.02] hover:shadow-lg rounded-lg">
                 <img
                   src={item.src}
                   alt={item.name}
-                  className="w-full h-[150px] object-cover rounded-lg"
+                  className="w-full h-[140px] sm:h-[150px] object-cover rounded-t-lg"
                 />
-                <div className="p-4">
-                  <h2 className="text-lg font-semibold truncate mb-1">
+                <div className="p-3 sm:p-4">
+                  <h2 className="text-base sm:text-lg font-semibold truncate mb-1">
                     {item.name}
                   </h2>
                   {item.properties && (
@@ -123,6 +125,7 @@ export default function CarouselComponent({ category }: Props) {
             </CarouselItem>
           ))}
         </CarouselContent>
+
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>

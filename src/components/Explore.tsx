@@ -89,61 +89,81 @@ const additionalCarouselItems = [
 export default function CarouselComponent() {
   return (
     <div className="max-w-[1200px] mx-auto px-4 py-6">
-        <h1 className="text-3xl font-bold mb-4">Browse by property type</h1>
-      <Carousel className="w-full h-full" orientation="horizontal">
-        <CarouselContent>
-          {additionalCarouselItems.map((item, index) => (
-            <CarouselItem key={index} className="basis-1/4 px-2 flex flex-col">
-              <div className="w-full bg-white">
-                <img
-                  src={item.src}
-                  alt={item.name}
-                  className="w-full h-[180px] object-cover rounded-xl"
-                />
-                <div className="p-4">
-                  <h2 className="text-lg font-semibold truncate mb-1">{item.name}</h2> 
-                </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      <h1 className="text-3xl font-bold mb-4">Browse by property type</h1>
 
-      <h1 className="text-3xl font-bold mb-4">Explore India</h1>
-      <p className="text-gray-600 mb-4">
-        These popular destinations have a lot to offer
-      </p>
+      <div className="relative">
+        <Carousel className="w-full h-full" orientation="horizontal">
+          <div className="overflow-x-auto scroll-smooth snap-x sm:overflow-visible">
+            <CarouselContent>
+              {additionalCarouselItems.map((item, index) => (
+                <CarouselItem
+                  key={index}
+                  className="basis-1/2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 px-2 flex-shrink-0 snap-start"
+                >
+                  <div className="w-full bg-white">
+                    <img
+                      src={item.src}
+                      alt={item.name}
+                      className="w-full h-[180px] object-cover rounded-xl"
+                    />
+                    <div className="p-4">
+                      <h2 className="text-lg font-semibold truncate mb-1">
+                        {item.name}
+                      </h2>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </div>
 
-      <Carousel className="w-full h-full" orientation="horizontal">
-        <CarouselContent>
-          {carouselItems.map((item, index) => (
-            <CarouselItem
-              key={index}
-              className="basis-1/6 px-2 flex flex-col"
-            >
-              <div className="w-full     bg-white">
-                <img
-                  src={item.src}
-                  alt={item.name}
-                  className="w-full h-[150px] object-cover rounded-xl"
-                />
-                <div className="p-4">
-                  <h2 className="text-lg font-semibold truncate  mb-1">
-                    {item.name}
-                  </h2>
-                  <p className="text-sm text-gray-600 truncate  mb-1">
-                    {item.properties} </p>
+          {/* Navigation Buttons - Hidden on Mobile */}
+          <div className="hidden md:flex">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
+        </Carousel>
+      </div>
 
-                </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      <h1 className="text-3xl font-bold mt-10 mb-4">Explore India</h1>
+      <p className="text-gray-600 mb-4">These popular destinations have a lot to offer</p>
+
+      <div className="relative">
+        <Carousel className="w-full h-full" orientation="horizontal">
+          <div className="overflow-x-auto scroll-smooth snap-x sm:overflow-visible">
+            <CarouselContent>
+              {carouselItems.map((item, index) => (
+                <CarouselItem
+                  key={index}
+                  className="basis-[45%] sm:basis-1/2 md:basis-1/4 lg:basis-1/6 px-2 flex-shrink-0 snap-start"
+                >
+                  <div className="w-full bg-white">
+                    <img
+                      src={item.src}
+                      alt={item.name}
+                      className="w-full h-[150px] object-cover rounded-xl"
+                    />
+                    <div className="p-4">
+                      <h2 className="text-lg font-semibold truncate mb-1">
+                        {item.name}
+                      </h2>
+                      <p className="text-sm text-gray-600 truncate mb-1">
+                        {item.properties}
+                      </p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </div>
+
+          {/* Navigation Buttons - Hidden on Mobile */}
+          <div className="hidden md:flex">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
+        </Carousel>
+      </div>
     </div>
   );
 }

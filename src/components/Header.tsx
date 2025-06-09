@@ -6,6 +6,14 @@ import { useState } from "react";
 import Image from "next/image";
 import NavButton from "@/components/NavButton";
 import Hero from "./HeroText";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 const suggestedCurrencies = [
   { name: "Euro", code: "EUR" },
@@ -41,8 +49,44 @@ export default function Header() {
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <div className="text-[1.6rem] font-bold ml-[1rem]">Booking.com</div>
+        
+        {/* Mobile Navigation */}
+        <div className="md:hidden">
+      <Sheet>
+        <SheetTrigger asChild>
+          <button className="focus:outline-none">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </SheetTrigger>
+        <SheetContent className="w-[300px] sm:w-[400px]">
+          <SheetHeader>
+            <SheetTitle className="text-xl font-bold">Menu</SheetTitle>
+          </SheetHeader>
+          <div className="mt-4 space-y-4">
+            <div className="text-sm">Selected Currency: <strong>{selectedCurrency}</strong></div>
+            <Button variant="ghost" className="w-full justify-start">List your property</Button>
+            <Button variant="ghost" className="w-full justify-start">Register</Button>
+            <Button variant="ghost" className="w-full justify-start">Sign in</Button>
+          </div>
+        </SheetContent>
+      </Sheet>
+    </div>
 
-        {/* Navigation */}
+
+        {/* Desktop Navigation */}
         <nav className="space-x-6 hidden md:flex items-center mr-[1.4rem] font-semibold ">
           <Dialog>
             <DialogTrigger asChild>
@@ -51,7 +95,7 @@ export default function Header() {
                 
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-h-[90vh] overflow-y-auto p-6 sm:max-w-4xl">
+            <DialogContent className=" flex max-h-[90vh] overflow-y-auto p-6 sm:max-w-4xl">
               <h2 className="text-xl font-bold mb-2">Select your currency</h2>
               <p className="text-sm text-gray-500 mb-6">
                 Where applicable prices will be converted to, and shown in, the currency that you select...
@@ -97,9 +141,10 @@ export default function Header() {
         
       </div>
       <div>
-        <nav className="  hidden md:flex items-center space-x-3 mr-10 ">
-       <NavButton/>
-       </nav>
+        <nav className="flex flex-wrap justify-center md:justify-start gap-x-2 gap-y-3 px-4">
+          <NavButton />
+        </nav>
+
       </div>
       <div>
      <Hero />
