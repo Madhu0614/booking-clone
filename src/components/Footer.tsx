@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from 'next/image';
 
 export default function Footer() {
   const words = ["vacation homes", "cottages", "cabins", "villas"];
@@ -38,7 +39,7 @@ export default function Footer() {
 
       {/* Right Image (Desktop only) */}
       <div className="hidden md:flex absolute right-0 bottom-0">
-        <img src="footer.png" alt="illustration" className="w-[500px] h-auto" />
+        <Image src="footer.png" alt="illustration" className="w-[500px] h-auto" />
       </div>
     </div>
   );
